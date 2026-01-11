@@ -11,16 +11,6 @@ temporal ordering constraints.
 
 The implementation is evaluated on a real-world Reddit interaction network.
 
-## Repository Structure
-.
-├── src/
-│   ├── preprocess_graph.py   # graph preprocessing
-│   └── earliest_arrival.py   # earliest-arrival query
-├── data/                     # local data (not tracked)
-├── scripts/                  # helper scripts (optional)
-├── requirements.txt
-├── README.md
-
 ## Dataset
 
 This project uses the SNAP Reddit Hyperlink Network dataset
@@ -52,17 +42,17 @@ These files can be large and are generated locally.
 
 ```bash
 python preprocess_graph.py \
-  --input data/soc-redditHyperlinks-title.tsv \
-  --dict_out data/dict.tsv \
-  --graph_out data/graph.tsv
+  --input soc-redditHyperlinks-title.tsv \
+  --dict_out dict.tsv \
+  --graph_out graph.tsv
 ```
 
 ### Run earliest_arrival
 
 ```bash
 python earliest_arrival.py \
-  --dict data/dict.tsv \
-  --graph data/graph.tsv \
+  --dict dict.tsv \
+  --graph graph.tsv \
   --source 100daysofrejection \
   --target oldschoolcool \
   --tstart "2015-10-29 12:20:04"
